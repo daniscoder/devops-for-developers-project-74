@@ -1,6 +1,9 @@
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    image: daniscoder/devops-for-developers-project-74
     command: make test
-    volumes:
-      - ./app:/app
+    environment:
+      - NODE_ENV=test
